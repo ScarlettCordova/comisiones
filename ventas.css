@@ -130,4 +130,10 @@ p {
     button {
         font-size: 1.05rem;
     }
+
+    .error-msg {
+        color: red;
+        font-style: italic;
+        font-size: 0.9em;
+}
 }

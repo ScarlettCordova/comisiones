@@ -10,23 +10,31 @@ function calcularComision(numeroVentas, precioProducto) {
     return comision;
 }
 
+    function validarInput(input) {
+  const valor = input.value.trim();
+  const errorDiv = document.getElementById("error_" + input.id);
+
+  // Reset
+  errorDiv.textContent = "";
+
+  if (valor === "") {
+    errorDiv.textContent = "Este campo no puede estar vacío";
+    return;
+  }
+
+  if (!/^\d+$/.test(valor)) {
+    errorDiv.textContent = "Solo se permiten números";
+    return;
+  }
+
+  if (valor.length > 5) {
+    errorDiv.textContent = "Máximo 5 dígitos permitidos";
+    return;
+  }
+}
+
 function calcular(){
-    //recuperamos propiedades de las cajas de texto
-    //let cmpSueldoBase=document.getElementById("txtSueldoBase");
-    //let cmpVentas=document.getElementById("txtVentas");
-    //let cmpPrecio=document.getElementById("txtPrecio");
 
-    //recuperamos el valor de las cajas de texto
-    //let sueldoBaseStr=cmpSueldoBase.value;
-
-    //let sueldoBaseStr=recuperarTexto("txtSueldoBase");
-    //let numeroVentasStr=recuperarTexto("txtVentas");
-    //let precioProductoStr=recuperarTexto("txtPrecio");
-
-    //let ventasStr=cmpVentas.value;
-    //let precioStr=cmpPrecio.value;
-
-    //convertimos el texto a numero
     let sueldoBase=recuperarFloat("txtSueldoBase");
     let ventas=recuperarFloat("txtVentas");
     let precio=recuperarFloat("txtPrecio");
@@ -44,3 +52,21 @@ function calcular(){
     spTotal.textContent=total;
 
 }
+
+
+    //recuperamos propiedades de las cajas de texto
+    //let cmpSueldoBase=document.getElementById("txtSueldoBase");
+    //let cmpVentas=document.getElementById("txtVentas");
+    //let cmpPrecio=document.getElementById("txtPrecio");
+
+    //recuperamos el valor de las cajas de texto
+    //let sueldoBaseStr=cmpSueldoBase.value;
+
+    //let sueldoBaseStr=recuperarTexto("txtSueldoBase");
+    //let numeroVentasStr=recuperarTexto("txtVentas");
+    //let precioProductoStr=recuperarTexto("txtPrecio");
+
+    //let ventasStr=cmpVentas.value;
+    //let precioStr=cmpPrecio.value;
+
+    //convertimos el texto a numero
