@@ -1,35 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background-color: #0f172a;
     color: white;
+    margin: 0;
+    padding: 20px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* CONTENEDOR */
 .contenedor {
     background-color: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+    
+    width: 100%;
+    max-width: 420px; /* mejor para tablets */
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
+/* TITULOS */
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 25px;
+    font-size: 1.3rem;
+}
+
+/* LABELS */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* INPUTS */
 input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    
+    border-radius: 6px;
+    border: none;
+    
+    font-size: 1rem;
 }
 
+/* BOTON */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    
     background-color: #22c55e;
     border: none;
+    border-radius: 8px;
+    
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
     background-color: #16a34a;
+}
+
+/* RESULTADOS */
+p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+/* 📱 CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    input {
+        padding: 9px;
+        font-size: 0.95rem;
+    }
+
+    button {
+        padding: 11px;
+        font-size: 0.95rem;
+    }
+}
+
+/* 📲 TABLETS */
+@media (min-width: 768px) {
+    .contenedor {
+        max-width: 500px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input {
+        font-size: 1.05rem;
+    }
+
+    button {
+        font-size: 1.05rem;
+    }
 }
