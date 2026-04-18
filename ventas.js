@@ -47,9 +47,9 @@ function calcular(){
     let spComision=document.getElementById("spComision");
     let spTotal=document.getElementById("spTotal");
 
-    spSueldoBase.textContent=sueldoBase;
-    spComision.textContent=comision;
-    spTotal.textContent=total;
+    spSueldoBase.textContent=sueldoBase.toFixed(2);;
+    spComision.textContent=comision.toFixed(2);;
+    spTotal.textContent=total.toFixed(2);;
 
 }
 
